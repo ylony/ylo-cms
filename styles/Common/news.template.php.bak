@@ -1,0 +1,289 @@
+<?php
+	if(isset($thisnews_data)){ //une news?>
+<div class="post-inner">			
+		<div class="post-header">					
+			    <h2 class="post-title"><a href="?page=news&nid=<?php echo $thisnews_data["0"]["id"]; ?>" title="<?php echo $thisnews_data["0"]["title"]; ?>">
+			    <?php echo $thisnews_data["0"]["title"]; ?></a></h2>	    
+		    <div class="post-meta">    
+			    <p class="post-author"><span>de </span><a href="index.php/author/ylony/index.html" title="Articles par Ylony" rel="author"><?php echo $thisnews_data["0"]["auteur"]; ?></a></p>
+				<p class="post-date"><span>On </span><a href="index.php/2016/04/14/construction-en-cours/index.html"><?php echo $thisnews_data["0"]["date"]; ?></a></p>
+									<p class="post-categories"><span>dans </span><a href="index.php/category/non-classe/index.html" rel="category tag">Non classé</a></p>									    
+		    </div>  	    
+		</div> <!-- /post-header -->			
+			<div class="post-content">	
+				<?php
+				echo nl2br($thisnews_data["0"]["core"]);
+				?>	
+			</div>	
+			<div class="clear"></div>
+			</div>	
+			<div class="post-navigation">
+						
+						<div class="post-navigation-inner">
+					
+														
+								<div class="post-nav-prev">
+								</div>
+														
+														
+							<div class="clear"></div>
+						
+						</div> <!-- /post-navigation-inner -->
+					
+					</div> <!-- /post-navigation -->
+
+
+	<?php //comments(); ?>
+<!-- Comment start -->
+<div class="comments-container">
+	
+		<div class="comments-inner">
+		
+			<a name="comments"></a>
+			
+			<div class="comments-title-container">
+			
+				<h2 class="comments-title">
+					4 Commentaires					
+				</h2>
+				
+								
+					<p class="comments-title-link">
+						
+						<a href="#respond">Ajouter un commentaire &rarr;</a>
+						
+					</p>
+				
+								
+				<div class="clear"></div>
+			
+			</div>
+		<!-- FIN INTRO -->
+
+
+
+
+
+
+			<div class="comments">
+		
+				<ol class="commentlist">
+				    	<li class="comment byuser comment-author-ylony bypostauthor even thread-even depth-1" id="li-comment-1">
+	
+
+				
+	<ul class="children">
+	<li class="comment byuser comment-author-ylony bypostauthor odd alt depth-2" id="li-comment-2">
+	
+		<div id="comment-2" class="comment">
+			
+			<img alt='' src='http://1.gravatar.com/avatar/18885e99621c2b262f5025fa8bc23776?s=160&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/18885e99621c2b262f5025fa8bc23776?s=320&amp;d=mm&amp;r=g 2x' class='avatar avatar-160 photo' height='160' width='160' />			
+								
+				<a class="comment-author-icon" href="http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/#comment-2" title="Auteur de l&rsquo;article">
+				
+					<div class="genericon genericon-user"></div>
+					
+				</a>
+			
+						
+			<div class="comment-inner">
+			
+				<div class="comment-header">
+											
+					<h4>Ylony</h4>
+				
+				</div> <!-- /comment-header -->
+				
+				<div class="comment-content post-content">
+			
+					<p>wow</p>
+					
+				</div><!-- /comment-content -->
+				
+				<div class="comment-meta">
+					
+					<div class="fleft">
+						<div class="genericon genericon-day"></div><a class="comment-date-link" href="http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/#comment-2" title="5 mai 2016 at 10 h 58 min">5 mai 2016</a>
+						<div class="genericon genericon-edit"></div><a class="comment-edit-link" href="http://127.0.0.1/blog/wp-admin/comment.php?action=editcomment&#038;c=2">Modifier</a>					</div>
+					
+											
+						<div class="fright"><div class="genericon genericon-reply"></div><a rel='nofollow' class='comment-reply-link' href='http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/?replytocom=2#respond' onclick='return addComment.moveForm( "comment-2", "2", "respond", "19" )' aria-label='Répondre à Ylony'>Réponse</a></div>					
+										
+					<div class="clear"></div>
+					
+				</div> <!-- /comment-meta -->
+								
+			</div> <!-- /comment-inner -->
+										
+		</div><!-- /comment-## -->
+				
+	<ul class="children">
+	<li class="comment byuser comment-author-ylony bypostauthor even depth-3" id="li-comment-3">
+	
+		<div id="comment-3" class="comment">
+			
+			<img alt='' src='http://1.gravatar.com/avatar/18885e99621c2b262f5025fa8bc23776?s=160&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/18885e99621c2b262f5025fa8bc23776?s=320&amp;d=mm&amp;r=g 2x' class='avatar avatar-160 photo' height='160' width='160' />			
+								
+				<a class="comment-author-icon" href="http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/#comment-3" title="Auteur de l&rsquo;article">
+				
+					<div class="genericon genericon-user"></div>
+					
+				</a>
+			
+						
+			<div class="comment-inner">
+			
+				<div class="comment-header">
+											
+					<h4>Ylony</h4>
+				
+				</div> <!-- /comment-header -->
+				
+				<div class="comment-content post-content">
+			
+					<p>lmjklj</p>
+					
+				</div><!-- /comment-content -->
+				
+				<div class="comment-meta">
+					
+					<div class="fleft">
+						<div class="genericon genericon-day"></div><a class="comment-date-link" href="http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/#comment-3" title="5 mai 2016 at 10 h 58 min">5 mai 2016</a>
+						<div class="genericon genericon-edit"></div><a class="comment-edit-link" href="http://127.0.0.1/blog/wp-admin/comment.php?action=editcomment&#038;c=3">Modifier</a>					</div>
+					
+											
+						<div class="fright"><div class="genericon genericon-reply"></div><a rel='nofollow' class='comment-reply-link' href='http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/?replytocom=3#respond' onclick='return addComment.moveForm( "comment-3", "3", "respond", "19" )' aria-label='Répondre à Ylony'>Réponse</a></div>					
+										
+					<div class="clear"></div>
+					
+				</div> <!-- /comment-meta -->
+								
+			</div> <!-- /comment-inner -->
+										
+		</div><!-- /comment-## -->
+				
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-ylony bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-4">
+	
+		<div id="comment-4" class="comment">
+			
+			<img alt='' src='http://1.gravatar.com/avatar/18885e99621c2b262f5025fa8bc23776?s=160&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/18885e99621c2b262f5025fa8bc23776?s=320&amp;d=mm&amp;r=g 2x' class='avatar avatar-160 photo' height='160' width='160' />			
+								
+				<a class="comment-author-icon" href="http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/#comment-4" title="Auteur de l&rsquo;article">
+				
+					<div class="genericon genericon-user"></div>
+					
+				</a>
+			
+						
+			<div class="comment-inner">
+			
+				<div class="comment-header">
+											
+					<h4>Ylony</h4>
+				
+				</div> <!-- /comment-header -->
+				
+				<div class="comment-content post-content">
+			
+					<p>:;,l;kl</p>
+					
+				</div><!-- /comment-content -->
+				
+				<div class="comment-meta">
+					
+					<div class="fleft">
+						<div class="genericon genericon-day"></div><a class="comment-date-link" href="http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/#comment-4" title="5 mai 2016 at 10 h 58 min">5 mai 2016</a>
+						<div class="genericon genericon-edit"></div><a class="comment-edit-link" href="http://127.0.0.1/blog/wp-admin/comment.php?action=editcomment&#038;c=4">Modifier</a>					</div>
+					
+											
+						<div class="fright"><div class="genericon genericon-reply"></div><a rel='nofollow' class='comment-reply-link' href='http://127.0.0.1/blog/index.php/2016/04/14/construction-en-cours/?replytocom=4#respond' onclick='return addComment.moveForm( "comment-4", "4", "respond", "19" )' aria-label='Répondre à Ylony'>Réponse</a></div>					
+										
+					<div class="clear"></div>
+					
+				</div> <!-- /comment-meta -->
+								
+			</div> <!-- /comment-inner -->
+										
+		</div><!-- /comment-## -->
+				
+	</li><!-- #comment-## -->
+				</ol>
+				
+										
+								
+			</div> <!-- /comments -->
+			
+		</div> <!-- /comments-inner -->
+		
+	</div> <!-- /comments-container -->
+<div class="respond-container">				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Laisser un commentaire <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/index.php/2016/04/14/construction-en-cours/#respond" style="display:none;">Annuler la réponse.</a></small></h3>				<form action="http://127.0.0.1/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<p class="logged-in-as"><a href="http://127.0.0.1/blog/wp-admin/profile.php" aria-label="Connexion en tant que Ylony. Modifier votre profil.">Connecté(e) en tant que Ylony</a>. <a href="http://127.0.0.1/blog/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2F127.0.0.1%2Fblog%2Findex.php%2F2016%2F04%2F14%2Fconstruction-en-cours%2F&amp;_wpnonce=bdee34eaa9">Déconnexion&nbsp;?</a></p><p class="comment-form-comment">
+			<label for="comment">Commentaire<span class="required">*</span></label>
+			<textarea id="comment" name="comment" cols="45" rows="6" required></textarea>
+		</p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Laisser un commentaire" /> <input type='hidden' name='comment_post_ID' value='19' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		</div> <!-- /respond-container -->						    			        		            	        			    	
+		<?php
+	}else {
+ 	if(isset($news_data)){//everynews
+ 		$init = 0; 
+ 		$i = 2;//default news number
+ 		while ($init<$i){
+ 			?>
+
+
+
+		
+	<div class="post-inner">
+				
+		<div class="post-header">
+
+							
+			    <h2 class="post-title"><a href="?page=news&nid=<?php echo $news_data[$init]["id"]; ?>" title="<?php echo $news_data[$init]["title"]; ?>">
+			    <?php echo $news_data[$init]["title"]; ?></a></h2>
+			    
+					    
+		    		    
+		    <div class="post-meta">
+			    
+			    <p class="post-author"><span>de </span><a href="index.php/author/ylony/index.html" title="Articles par Ylony" rel="author"><?php echo $news_data[$init]["auteur"]; ?></a></p>
+				<p class="post-date"><span>On </span><a href="index.php/2016/04/14/construction-en-cours/index.html"><?php echo $news_data[$init]["date"]; ?></a></p>
+									<p class="post-categories"><span>dans </span><a href="index.php/category/non-classe/index.html" rel="category tag">Non classé</a></p>
+											    
+		    </div>
+		    	    
+		</div> <!-- /post-header -->
+		
+				
+			<div class="post-content">
+			
+				<?php
+				echo nl2br($news_data[$init]["core"]);
+				?>
+			
+			</div>
+			
+			<div class="clear"></div>
+		
+			
+	</div> <!-- /post-inner -->
+	
+</div> <!-- /post -->			    			        		            
+			        			    	
+			    		<div id="post-7" class="post post-7 type-post status-publish format-standard hentry category-news tag-developer tag-news tag-website tag-ylony">
+
+	<?php	
+	$init++;
+ 		} //w.end
+ 	}
+	}
+
+?>

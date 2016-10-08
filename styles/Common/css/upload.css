@@ -1,0 +1,101 @@
+#upload{
+	  background:url("../img/upload.jpg");
+	  font-family: Open sans;
+    text-align: center;
+    background-size: cover;
+    width: 100%;
+    -moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+  	box-sizing: border-box;
+}
+#upload h1{
+	color:#008aff;
+	text-shadow: 2px 2px #000000;
+	font-weight: 800;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+#upload h1 span {
+  font-size: 13px;
+  display: block;
+  padding-left: 4px;
+}
+
+#upload p {
+  margin-top: 200px;
+}
+#upload p a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #b83729;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#upload p a:hover {
+  background-color: #ab3326;
+}
+
+#upload .custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+#upload .custom-file-upload {
+  display: block;
+  width: auto;
+  font-size: 16px;
+  margin-top: 30px;
+}
+#upload .custom-file-upload label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#upload .file-upload-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+#upload .file-upload-input {
+  width: 300px;
+  color: #fff;
+  font-size: 16px;
+  padding: 11px 17px;
+  border: none;
+  background-color: #00467d;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#upload .file-upload-input:hover, .file-upload-input:focus {
+  background-color: #00325a;
+  outline: none;
+}
+
+#upload .file-upload-button {
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 11px 20px;
+  border: none;
+  margin-left: -1px;
+  background-color: #0062b0;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#upload .file-upload-button:hover {
+  background-color: #008eff;
+}
