@@ -177,9 +177,11 @@
  		$init = 0; 
  		$i = 3;//default news number
  		while ($init<$i){
+ 			if(empty($news_data[$init]["id"])){
+ 				$init=4;
+ 			}
+ 			else{
  			?>
-
-
 
 		
 	<div class="post-inner">
@@ -222,6 +224,7 @@
 
 	<?php	
 	$init++;
+}
  		} //w.end
  	}
 	}

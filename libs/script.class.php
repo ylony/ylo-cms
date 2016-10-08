@@ -1,7 +1,7 @@
 <?php
 /* Add name check ? */
 	class script{
-		private $script_ext = array('cpp', 'c', 'php', 'cs', 'html', 'js', 'css', 'h');
+		private $script_ext = array('cpp', 'c', 'php', 'cs', 'html', 'js', 'css', 'h', 'txt');
 		public function add_script($script_name, $script_cat, $script_description, $script_source, $script_source_file, $script_win, $script_lin, $script_author){
 			if(!empty($script_name) && !empty($script_cat) && !empty($script_description)){
 				// Clean

@@ -2,13 +2,13 @@
 
 class movie{
 	private $max_movie_per_page = 3;
-	private $allowed_expansion = array('mp4');
-	function new_movie($movie, $author, $description, $is_private, $allow_comments, $categorie, $keywords){
+	function new_movie($movie, $author, $titre, $description, $is_private, $allow_comments, $categorie, $keywords){
 		global $security, $sql, $prefix;
-		if(!empty($movie) && !empty($author) && !empty($categorie)){
+		if(!empty($movie) && !empty($author) && !empty($titre) && !empty($categorie)){
 			//clean
 			$movie = $security->protect_string_bdd($movie);
 			$author = $security->clean($author);
+			$titre = $security->protect_string_bdd($titre);
 			$description = $protect_string_bdd($description);
 			$is_private = $security->protect_int($is_private);
 			$allow_comments = $security->protect_int($allow_comments);
@@ -20,7 +20,7 @@ class movie{
 			//insert
 			$rst = $sql->query("INSERT INTO {$prefix}_movies 
 				(movie,author,titre,description,is_private,allow_comments,categorie,keywords,date,ip)
-			 	VALUES ('{$movie}', '{$author}', '{$description}', '{$is_private}', '{$allow_comments}', '{$categorie}', '{$keywords}', '{$date}', '{$ip}')");
+			 	VALUES ('{$movie}'), '{$author}'), '{$titre}'), '{$description}'), '{$is_private}'), '{$allow_comments}', '{$categorie}'), '{$keywords}', '{$date}', '{$ip}')");
 			if($rst){
 				return TRUE;
 			}
@@ -36,10 +36,11 @@ class movie{
 		global $security, $sql, $prefix;
 		$rst = $sql->getall("SELECT * FROM {$prefix}_movies ORDER BY id DESC LIMIT {$this->max_movie_per_page}");
 		if($rst){
-			include("./Common/movies.template.php");
+			include("./styles/Common/movies.template.php");
 			return $rst;
 		}
 		else{
+			echo "Il n'y a aucune vidéo pour le moment !";
 			return false;
 		}
 	}
@@ -71,7 +72,6 @@ class movie{
 		else{
 			echo "<option value=>Something goes wrong</option>";
 		}
-
 	}
 }
 $movie = new movie;

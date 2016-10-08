@@ -294,4 +294,8 @@ function get_movie_data($id){
 	$data = $movie->get_movie_data($id);
 	return $data;	
 }
+function get_dl_link($id){
+	global $script;
+	return $script->get_dl_link($id);
+}
 ?>
