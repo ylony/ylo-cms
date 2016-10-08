@@ -3,7 +3,10 @@ class news {
 	function shownews(){
 	global $sql, $prefix;
 	$news_data = $sql->getall("SELECT * FROM {$prefix}_news ORDER BY id DESC LIMIT 3");
-	if(file_exists("./styles/Common/news.template.php"))
+	if(empty($news_data)){
+		echo "There is no news yet !";
+	}
+	elseif(file_exists("./styles/Common/news.template.php"))
 	{
 		include "./styles/Common/news.template.php";
 	}

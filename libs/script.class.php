@@ -1,23 +1,27 @@
 <?php
 /* Add name check ? */
 	class script{
+		private $script_ext = array('cpp', 'c', 'php', 'cs', 'html', 'js', 'css', 'h');
 		public function add_script($script_name, $script_cat, $script_description, $script_source, $script_source_file, $script_win, $script_lin, $script_author){
 			if(!empty($script_name) && !empty($script_cat) && !empty($script_description)){
 				// Clean
 				global $security;
 				$script_name = $security->clean($script_name);
 				$script_cat =  $security->res($security->protect_string_bdd($script_cat));
-				$script_description =  $security->res($security->protect_string_bdd($script_description));
+				$script_description =  $security->res($script_description);
 				$script_author = $security->clean($script_author);
+				$script_date = date("Y-m-d H:i:s");
 				//
-				if($script_source == "y"){
+				if(!$script_source_file["error"] == 4){
 					global $upload;
 					$source_up = $upload->GetUploadStmt($script_source_file, "script");
 				}
 				if(!$script_win["error"] == 4){
+					global $upload;
 					$source_win_up = $upload->GetUploadStmt($script_win, "script");
 				}
 				if(!$script_lin["error"] == 4){
+					global $upload;
 					$source_lin_up = $upload->GetUploadStmt($script_lin, "script");
 				}
 				//Insert DB
@@ -33,12 +37,15 @@
 					$source_up = NULL;
 				}
 				//Query
-				$query = "INSERT INTO {$prefix}_scripts (name, cat, description, source_file, win, lin, author) VALUES ('{$script_name}', '{$script_cat}', '{$script_description}', '{$source_up}', '{$source_win_up}', '{$source_lin_up}', '{$script_author}')";
+				$query = "INSERT INTO {$prefix}_scripts (name, cat, description, source_file, win, lin, author, date, opensource) VALUES ('{$script_name}', '{$script_cat}', '{$script_description}', '{$source_up}', '{$source_win_up}', '{$source_lin_up}', '{$script_author}', '{$script_date}', '{$script_source}')";
 				$result = $sql->query($query);
 				if(!$result){
 					return "SQL ERROR.";
 				}
 				else{
+					if(!empty($source_up)){
+						unpack_script($source_up);
+					}
 					return 42;
 				}
 			}
@@ -57,6 +64,7 @@
 				'</td><td>'.$result[$i]["cat"].
 				'</td><td>'.$result[$i]["description"].
 				'</td><td>'.$result[$i]["source_file"].
+				'</td><td>'.$result[$i]["date"].
 				'</td><td>'.$result[$i]["win"].
 				'</td><td>'.$result[$i]["lin"].'</td></tr>';
 				$i++;
@@ -125,7 +133,6 @@
 		            fclose($map_file);
 		          	global $sql, $prefix;
 		            $sql->query("UPDATE {$prefix}_scripts set tmp_id = '{$id}' WHERE source_file = '{$source_file}'");
-		            //return TRUE;
 		         } 
 		      } 
 		   }
@@ -141,15 +148,30 @@
 		$result = $sql->get("SELECT * FROM {$prefix}_scripts WHERE tmp_id = '{$id}'");
 		return $result;
 	}
+	public function get_dl_link($id){
+		global $security;
+		$id = $security->protect_int($id);
+		$result = $this->get_script_data($id);
+		$result = explode("/", $result["source_file"]);
+		$result = end($result);
+		return "./uploads/".$result;
+	}
 	public function convert_map_file($map){
 		if(file_exists($map)){
 			$map_file = fopen($map, 'r');
 			if($map_file){
 				while($lign = fgets($map_file)){
+					// one step
 					$extension = explode(".", $lign);
-					//if($extension)
-					//+DATE
-					write(trim($lign));
+					$name = explode("/", $lign);
+					// two step
+					$name = trim(end($name));
+					$ext = trim(end($extension));
+					//third one
+					if(in_array($ext, $this->script_ext)){
+						echo '<a>'.$name.'</a></br>';
+						write(trim($lign));
+					}
 				}
 			}
 			else{
@@ -159,6 +181,12 @@
 		else{
 			return "Map file not found";
 		}
+	}
+	public function is_opensource($id){
+		global $sql, $prefix, $security;
+		$id = $security->protect_int($id);
+		$result = $sql->get("SELECT * FROM {$prefix}_scripts WHERE tmp_id = '{$id}'");
+		return trim($result["opensource"]);
 	}
 }
 	$script = new script;

@@ -12,7 +12,7 @@
 		</div> <!-- /post-header -->			
 			<div class="post-content">	
 				<?php
-				echo nl2br($thisnews_data["core"]);
+				echo nl2br(htmlentities($thisnews_data["core"]));
 				?>	
 			</div>	
 			<div class="clear"></div>
@@ -173,12 +173,14 @@
 		</div> <!-- /respond-container -->						    			        		            	        			    	
 		<?php
 	}else {
- 	if(!empty($news_data)){//everynews
+ 	if(isset($news_data)){//everynews
  		$init = 0; 
  		$i = 3;//default news number
  		while ($init<$i){
- 			if(!empty($news_data[$init])){
  			?>
+
+
+
 		
 	<div class="post-inner">
 				
@@ -219,13 +221,9 @@
 			    		<div id="post-7" class="post post-7 type-post status-publish format-standard hentry category-news tag-developer tag-news tag-website tag-ylony">
 
 	<?php	
- 			}
- 		$init++; 
- 		}	//w.end
+	$init++;
+ 		} //w.end
  	}
- 	else{
- 		echo "</br>Nothing to display";
- 	}
-}
+	}
 
 ?>

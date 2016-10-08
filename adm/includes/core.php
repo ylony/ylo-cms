@@ -201,4 +201,13 @@ if(!empty($_GET['page']))
 		$result = $sql->count($query);
 		return $result;
 	}
+	function get_movie_cat(){
+		global $movie;
+		$movie->get_movie_cat();
+	}
+	function movie_add($m_name, $m_cat, $m_desc, $m_public, $m_allow, $m_sourcef, $m_ytid, $m_author, $m_key){
+		global $movie;
+		$rst = $movie->new_movie($m_name, $m_author, $m_desc, $m_public, $m_allow, $m_cat, $m_key);
+		return $rst;
+	}
 ?>
