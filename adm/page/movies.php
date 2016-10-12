@@ -33,7 +33,7 @@ if(isset($_SESSION["ycms_adm_user"]))
         </div>
         <div class="box-body">
           <table class="table">
-            <?php list_movie(); ?>
+            <?php //list_movie(); ?>
           </table>
         </div>
         <!-- /.box-body -->
@@ -97,31 +97,26 @@ if(isset($_SESSION["ycms_adm_user"]))
                 </label>
               </div>
                 <div class="form-group">
-                  <label for="movie_source_file">Sources file</label>
-                  <input type="file" name="movie_source_file" id="movie_source_file">
-
-                  <p class="help-block">Mp4 only</p>
-                </div>
-                <div class="form-group">
                   <label for="movie_source_file">Mots - Clés</label>
                   <input type="text" name="movie_keywords" id="movie_keywords">
                   <p class="help-block">Vous pouvez séparer les mots-clés à l'aide de ",".</p>
                 </div>
                 <div class="form-group">
-                  <label for="movie_binary_win">Youtube</label>
+                  <label for="movie_binary_win">Youtube* </label>
                   <input type="text" name="movie_yt" id="movie_yt">
 
                   <p class="help-block">Youtube Id</p>
                 <div class="col-xs-3 form-group">
                   <button type="submit" name="movie_add" class="btn btn-block btn-success btn-lg">Add a movie</button>
-                </div>   
+                </div>  
+                </div> 
           </form>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
         <?php
           if(isset($_POST["movie_add"])){ 
-             $result = movie_add($_POST["movie_name"], $_POST["movie_cat"], $_POST["movie_description"], $_POST["movie_public"], $_POST["movie_a_comment"], $_FILES["movie_source_file"], $_POST["movie_yt"], get_display_name($_SESSION["ycms_adm_user"]), $_POST["movie_keywords"]);  
+             $result = movie_add($_POST["movie_name"], $_POST["movie_cat"], $_POST["movie_description"], $_POST["movie_public"], $_POST["movie_a_comment"], $_POST["movie_yt"], get_display_name($_SESSION["ycms_adm_user"]), $_POST["movie_keywords"]);  
              if(!$result){
              ?>
 
