@@ -12,7 +12,7 @@ class movie{
 			$is_private = $security->protect_int($is_private);
 			$allow_comments = $security->protect_int($allow_comments);
 			$categorie = $security->clean($categorie);
-			$keywords = $security->protect_string_bdd($keywords);
+			$keywords = $security->res($security->protect_string_bdd($keywords));
 			$date = date("Y-m-d");
 			$ip = $_SERVER["REMOTE_ADDR"];
 			$yt_id = $security->res($yt_id);
