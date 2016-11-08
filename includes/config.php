@@ -1,15 +1,25 @@
 <?php
-/* YLO-CMS CONFIG */
-	$host='localhost';
-	$database='database';
-	$prefix='yfc';
-	$usermysql='root';
-	$passmysql='';
-	$SiteName='YourSiteName';
-	$keywords='key, words, etc';
-	$description="Describe your project";
-	$adresse='website address used in email';
-	$contact_email='yoursite@contact.fr';
-	$debug=TRUE; // If true will display advanced error & page loading in footer
-/*********************/
+
+/* MYSQL CONFIGURATION */
+
+$host = 'localhost'; //Default
+$database = 'YourMysqlDatabase';
+$prefix = 'yfc'; // Default dont leave it empty <- need to be fixed
+$usermysql = 'YourMysqlUsername';
+$passmysql = 'YourMysqlPassword';
+
+/* WEBSITE CONFIGURATION */
+
+$SiteName = 'YourSiteName';
+$keywords = 'site, description, another, another, etc';
+$description = 'The Big Description';
+$adresse = 'http://website.com/blog/';
+$contact_email = 'ylocms@ylofanclub.fr';
+
+/* ADVANCED CONFIGURATION */
+
+$debug = TRUE; // Show advanced errors message & Sql stats on footer
+$logs = TRUE; // Record logs
+
+/* END OF CONFIGURATION */
 ?>
