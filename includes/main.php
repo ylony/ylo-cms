@@ -1,8 +1,8 @@
 <?php
 session_start();
 /*
-   ELO-CMS par Ylony 
-   Version 0.2 ALPHA
+   YLO-CMS par Ylony 
+   Version 0.4 ALPHA
 */
   //if (file_exists("./install")){
 
@@ -11,20 +11,23 @@ session_start();
 	//}
 //CORE INIT // login path or adm path
 $folder=$_SERVER["REQUEST_URI"];$folder2=preg_match("#/adm/#i", "'.$folder.'");if($folder2 == TRUE){$folder2 ="/adm/";}else{$folder2=preg_match("#/login/#i", "'.$folder.'");if($folder2 == TRUE){$folder2 = "/login/";}else{$folder2="";}}if($folder2 == "/adm/"){$path = "../";}else{if($folder2 == "/login/"){$path = "../";}else{$path = ".";}}$folder=substr($_SERVER["REQUEST_URI"], -10, 10);if($folder == "page=adm"){header('Location: ./?page=404');}
-require_once("{$path}/includes/config.php");
-require_once("{$path}/libs/sql.class.php");
-require_once("{$path}/libs/news.class.php");
-require_once("{$path}/libs/styles.class.php");
-require_once("{$path}/libs/html.class.php");
-require_once("{$path}/libs/security.class.php");
-require_once("{$path}/libs/page.class.php");
-require_once("{$path}/libs/module.class.php");
-require_once("{$path}/libs/account.class.php");
-require_once("{$path}/libs/item.class.php");
-require_once("{$path}/libs/paypal.class.php");
-require_once("{$path}/libs/upload.class.php");
-require_once("{$path}/libs/script.class.php");
-require_once("{$path}/libs/movies.class.php");
+
+	require_once("{$path}/includes/config.php");
+	require_once("{$path}/libs/sql.class.php");
+	require_once("{$path}/libs/news.class.php");
+	require_once("{$path}/libs/styles.class.php");
+	require_once("{$path}/libs/html.class.php");
+	require_once("{$path}/libs/security.class.php");
+	require_once("{$path}/libs/page.class.php");
+	require_once("{$path}/libs/module.class.php");
+	require_once("{$path}/libs/account.class.php");
+	require_once("{$path}/libs/item.class.php");
+	require_once("{$path}/libs/paypal.class.php");
+	require_once("{$path}/libs/upload.class.php");
+	require_once("{$path}/libs/script.class.php");
+	require_once("{$path}/libs/movies.class.php");
+	require_once("{$path}/libs/logs.class.php");
+
 //
 // PLUGIN GOES HERE
 require_once("{$path}/libs/thirdpart/HighLight/plugin.php");
@@ -49,6 +52,7 @@ function get_current_style_path(){
 	global $styles;
 	return $styles->get_current_style_path();
 }
+$style_path = get_current_style_path(); // Limit queries number
 function news(){
   	global $news;
   	$result = $news->shownews();

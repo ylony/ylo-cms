@@ -29,6 +29,7 @@
 				$stmt = $connect->query($string);
 				$endtime = microtime(true);
 				$duration = $endtime - $starttime;
+				new logs($string." ".$connect->error, "SQL");
 				if(!$stmt){
 					if($debug == TRUE){
 						printf("Erreur : %s\n", $connect->error);

@@ -20,6 +20,7 @@ $contact_email = 'ylocms@ylofanclub.fr';
 
 $debug = TRUE; // Show advanced errors message & Sql stats on footer
 $logs = TRUE; // Record logs
+$logs_folder = "./logs/"
 
 /* END OF CONFIGURATION */
 ?>
